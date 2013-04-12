@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_tn_industry_domain_Company" object="${company}" path="/companys" z="qiU3EDwTSgXekHv8kpMbik6frMQ=">
+        <field:display field="denomination" id="s_com_tn_industry_domain_Company_denomination" object="${company}" z="68LXkJT37MSfyfyy7TKhbMHsA3c="/>
+        <field:display field="companyName" id="s_com_tn_industry_domain_Company_companyName" object="${company}" z="lLyJc+L49ixlyOQAdVvSSz2CM3o="/>
+        <field:display field="responsible" id="s_com_tn_industry_domain_Company_responsible" object="${company}" z="PZKwUk0UAaV7FMJTn+oRT1gUSZw="/>
+        <field:display field="factoryAddress" id="s_com_tn_industry_domain_Company_factoryAddress" object="${company}" z="H6LXze4GzYzlu7qBntSVDqBuw7k="/>
+        <field:display field="governorate" id="s_com_tn_industry_domain_Company_governorate" object="${company}" z="uDc9L7FgCVZ57knEI5e/qAICMcY="/>
+        <field:display field="phones" id="s_com_tn_industry_domain_Company_phones" object="${company}" z="yfO8gguSfI23P8fGg8qnca0rt8I="/>
+        <field:display field="faxes" id="s_com_tn_industry_domain_Company_faxes" object="${company}" z="jJbBxUamBZcuPXi4e1MQZHfsNwc="/>
+        <field:display field="email" id="s_com_tn_industry_domain_Company_email" object="${company}" z="SUzuA3fYqEFAyJmge8qZR4UqVvo="/>
+        <field:display field="url" id="s_com_tn_industry_domain_Company_url" object="${company}" z="vS7pRqg7VkuF10+5rgKtDyWLIxI="/>
+        <field:display field="regime" id="s_com_tn_industry_domain_Company_regime" object="${company}" z="ywJYgXNKYP2g4rWdafjDB9EGiKo="/>
+        <field:display field="ppe" id="s_com_tn_industry_domain_Company_ppe" object="${company}" z="g/T9b+Y824PISjo+7D+pnqmOC3E="/>
+        <field:display date="true" dateTimePattern="${company_intoproduction_date_format}" field="intoProduction" id="s_com_tn_industry_domain_Company_intoProduction" object="${company}" z="9skF5JF754mh8tD7MEYmfsKjHMo="/>
+        <field:display field="capital" id="s_com_tn_industry_domain_Company_capital" object="${company}" z="VCJv2EfGSwc2nDw9LXkS+NvBIaA="/>
+        <field:display field="workersNum" id="s_com_tn_industry_domain_Company_workersNum" object="${company}" z="KbSGAuJbMCfXeabWQC2VVeHjjkw="/>
+        <field:display field="products" id="s_com_tn_industry_domain_Company_products" object="${company}" z="4IwQAQgb2zj5KQY9NAu6NWAfVgI="/>
+    </page:show>
+</div>

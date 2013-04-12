@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_tn_industry_domain_Company" items="${companys}" z="Q5AwfmQ+JkDW/PW6+8eiD4AO7Jw=">
+        <table:table data="${companys}" id="l_com_tn_industry_domain_Company" path="/companys" z="NgOjiyWCUzqHJi7CNNqVqTCutN4=">
+            <table:column id="c_com_tn_industry_domain_Company_denomination" property="denomination" z="qyzJSCNVdqOruvX9zlcMsBwh8bg="/>
+            <table:column id="c_com_tn_industry_domain_Company_companyName" property="companyName" z="ewwKvjOa5GQVrNHAKqPhzuzdNBY="/>
+            <table:column id="c_com_tn_industry_domain_Company_responsible" property="responsible" z="2gNU+a8WXioiDefwhZ1K//HGQxc="/>
+            <table:column id="c_com_tn_industry_domain_Company_factoryAddress" property="factoryAddress" z="jKAATvbstXKOwGpJ0RbizlPTy1I="/>
+            <table:column id="c_com_tn_industry_domain_Company_governorate" property="governorate" z="h216rE7+1+KgJWoFQZusVVwXdN8="/>
+            <table:column id="c_com_tn_industry_domain_Company_phones" property="phones" z="m+VHeV7XpEs306lGG+j3kJuMWuY="/>
+        </table:table>
+    </page:list>
+</div>

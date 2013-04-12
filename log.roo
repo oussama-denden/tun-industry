@@ -1,0 +1,51 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-12 20:04:25
+hint
+project --topLevelPackage com.tn.industry --java 6 --packaging war --projectName tun-industry
+hint
+jpa setup --database MYSQL --provider HIBERNATE --databaseName tun_industry --hostName localhost --userName tun_industry --password tun_industry
+hint 
+entity jpa --class ~.domain.Sector --testAutomatically 
+field string --fieldName sectorName --notNull --unique true
+entity jpa --class ~.domain.ActivityBranch --testAutomatically 
+field string --fieldName activityName --notNull --unique 
+entity jpa --class ~.domain.Products --testAutomatically 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-12 20:20:17
+hint
+focus --class ~.domain.Products
+field string --fieldName productsName --notNull --unique 
+focus --class ~.domain.Sector
+field set --fieldName sectorBranches --type ~.domain.ActivityBranch --cardinality ONE_TO_MANY 
+focus --class ~.domain.ActivityBranch
+field set --fieldName activityProducts --type ~.domain.Products --cardinality ONE_TO_MANY 
+entity jpa --class ~.domain.Company --testAutomatically 
+field string --fieldName denomination 
+field string --fieldName companyName
+field string --fieldName responsible
+field string --fieldName factoryAddress
+field string --fieldName governorate
+field string --fieldName phones
+field string --fieldName faxes
+field string --fieldName email
+field string --fieldName url
+field string --fieldName regime
+field string --fieldName ppe
+field date --type java.util.Date --fieldName intoProduction 
+field number --fieldName capital --type double 
+field number --fieldName workersNum --type long
+focus --class ~.domain.Products
+field set --type ~.domain.Company --fieldName companies --cardinality ONE_TO_MANY 
+hint
+web mvc setup
+web mvc all --package ~
+logging setup --level INFO --package ROOT 
+perform tests
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-12 20:47:21
+focus --class ~.domain.ActivityBranch
+field reference --fieldName sector --type ~.domain.Sector --cardinality MANY_TO_ONE 
+focus --class ~.domain.Products
+field reference --fieldName activityBranch --type ~.domain.ActivityBranch --cardinality MANY_TO_ONE 
+focus --class ~.domain.Company
+field reference --fieldName products --type ~.domain.Products --cardinality MANY_TO_ONE 
+web mvc all --package ~
+perform clean
+perform tests

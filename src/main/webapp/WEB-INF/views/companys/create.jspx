@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_tn_industry_domain_Company" modelAttribute="company" path="/companys" render="${empty dependencies}" z="fuSPNxU4ctA+Sib0Tub9wOiGlfw=">
+        <field:input field="denomination" id="c_com_tn_industry_domain_Company_denomination" z="QO2KttZRdp689u3PBK/+XMa29ug="/>
+        <field:input field="companyName" id="c_com_tn_industry_domain_Company_companyName" z="bNFdKho8uZQLpzee2WdIgo4lOXM="/>
+        <field:input field="responsible" id="c_com_tn_industry_domain_Company_responsible" z="T+cPlS8Ilnd0PdHTuX3l30XMz80="/>
+        <field:input field="factoryAddress" id="c_com_tn_industry_domain_Company_factoryAddress" z="bzZwbcMHj50B6RL5WVbx6am2ee4="/>
+        <field:input field="governorate" id="c_com_tn_industry_domain_Company_governorate" z="sx7a64ePbuYIIgMjkJsE3BzZ6k0="/>
+        <field:input field="phones" id="c_com_tn_industry_domain_Company_phones" z="Pi+56BiS3E8B+GbtmbaBZ+yZqlc="/>
+        <field:input field="faxes" id="c_com_tn_industry_domain_Company_faxes" z="bF3aPmd3JkLIuDtxFEbrr3m0uBU="/>
+        <field:input field="email" id="c_com_tn_industry_domain_Company_email" validationMessageCode="field_invalid_email" z="DomQK5mxLH/RRrxQULmg4Nwg4zY="/>
+        <field:input field="url" id="c_com_tn_industry_domain_Company_url" z="+8rycS7FUgwi/kr+/zTRio7DXi4="/>
+        <field:input field="regime" id="c_com_tn_industry_domain_Company_regime" z="glQpVvLLI7iqgesIbgexJ0gnsZU="/>
+        <field:input field="ppe" id="c_com_tn_industry_domain_Company_ppe" z="gqebFWeKD08YZIhzA0EV+L0KpYo="/>
+        <field:datetime dateTimePattern="${company_intoproduction_date_format}" field="intoProduction" id="c_com_tn_industry_domain_Company_intoProduction" z="Fm16m1lY5cBXB+8sMTOcUi2Snwo="/>
+        <field:input field="capital" id="c_com_tn_industry_domain_Company_capital" z="DFf85EorCqZb5mjh6+Kh93p7xm8="/>
+        <field:input field="workersNum" id="c_com_tn_industry_domain_Company_workersNum" z="V5BCcWE03G1kFHO8pGjjekOuvQE="/>
+        <field:select field="products" id="c_com_tn_industry_domain_Company_products" itemValue="id" items="${productses}" path="/productses" z="F+Tx/tqyJaBdRiClJ94HUWiEOT8="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_tn_industry_domain_Company" render="${not empty dependencies}" z="Ej7f4WIavBC6jisr2B9eayugXz0="/>
+</div>
