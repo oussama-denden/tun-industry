@@ -49,3 +49,5 @@ field reference --fieldName products --type ~.domain.Products --cardinality MANY
 web mvc all --package ~
 perform clean
 perform tests
+security setup
+perform clean
