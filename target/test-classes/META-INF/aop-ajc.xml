@@ -1,20 +1,20 @@
 <aspectj>
 <aspects>
-<aspect name="com.tn.industry.domain.SectorDataOnDemand_Roo_Configurable"/>
-<aspect name="com.tn.industry.domain.ActivityBranchIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.tn.industry.domain.CompanyDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.tn.industry.domain.SectorIntegrationTest_Roo_Configurable"/>
 <aspect name="com.tn.industry.domain.CompanyDataOnDemand_Roo_Configurable"/>
+<aspect name="com.tn.industry.domain.ActivityBranchIntegrationTest_Roo_Configurable"/>
+<aspect name="com.tn.industry.domain.ProductsIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.tn.industry.domain.SectorDataOnDemand_Roo_Configurable"/>
+<aspect name="com.tn.industry.domain.ActivityBranchIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.tn.industry.domain.ProductsIntegrationTest_Roo_Configurable"/>
 <aspect name="com.tn.industry.domain.ActivityBranchDataOnDemand_Roo_Configurable"/>
 <aspect name="com.tn.industry.domain.SectorDataOnDemand_Roo_DataOnDemand"/>
-<aspect name="com.tn.industry.domain.ActivityBranchIntegrationTest_Roo_Configurable"/>
-<aspect name="com.tn.industry.domain.ProductsIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.tn.industry.domain.ProductsDataOnDemand_Roo_Configurable"/>
 <aspect name="com.tn.industry.domain.ProductsDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.tn.industry.domain.CompanyIntegrationTest_Roo_Configurable"/>
-<aspect name="com.tn.industry.domain.ActivityBranchDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.tn.industry.domain.CompanyIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.tn.industry.domain.ActivityBranchDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.tn.industry.domain.SectorIntegrationTest_Roo_IntegrationTest"/>
 </aspects>
 </aspectj>
