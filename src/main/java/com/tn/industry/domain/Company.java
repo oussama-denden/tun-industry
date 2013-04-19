@@ -12,8 +12,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
 @RooJson
+@RooJpaActiveRecord(finders = { "findCompanysByProducts" })
 public class Company {
 
     private String denomination;

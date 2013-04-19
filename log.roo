@@ -65,3 +65,9 @@ finder add --finderName findActivityBranchesBySector
 focus --class ~.domain.Products
 finder list 
 finder add findProductsesByActivityBranch
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-04-19 09:59:23
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-19 17:56:15
+focus --class ~.domain.Company
+finder list 
+finder add --finderName findCompnysByProducts
+finder add --finderName findCompanysByProducts
