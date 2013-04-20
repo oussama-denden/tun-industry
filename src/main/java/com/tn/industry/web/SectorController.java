@@ -27,7 +27,7 @@ public class SectorController {
     	HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         List<Sector> sectors = Sector.findAllSectors();
-        Logger.getLogger(SectorController.class).log(Level.INFO, "all");
+        Logger.getLogger(SectorController.class).log(Level.INFO, "subscribed sectors number : " + sectors.size());
         return new ResponseEntity<String>(Sector.toJsonArray(sectors), headers, HttpStatus.OK);
     }
 

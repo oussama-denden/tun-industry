@@ -1,6 +1,7 @@
 package com.tn.industry.web;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -27,13 +28,24 @@ import com.tn.industry.domain.Sector;
 @RooWebJson(jsonObject = Company.class)
 public class CompanyController {
 
+	@RequestMapping(value = "/find", headers = "Accept=application/json")
+	@ResponseBody
+	public ResponseEntity<String> getCompany(@RequestParam("id") Long id) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json; charset=utf-8");
+		Logger.getLogger(CompanyController.class).log(Level.INFO,
+				"company id : " + id);
+		return new ResponseEntity<String>(Company.findCompany(id).toJson(),
+				headers, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/num", headers = "Accept=application/json")
 	@ResponseBody
 	public ResponseEntity<String> getSubscribedCompnayNumber() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json; charset=utf-8");
 		Logger.getLogger(CompanyController.class).log(Level.INFO,
-				"num : " + Company.findAllCompanys().size());
+				"subscribed company num : " + Company.findAllCompanys().size());
 
 		return new ResponseEntity<String>("{\"num\":"
 				+ String.valueOf(Company.findAllCompanys().size()) + "}",
@@ -55,18 +67,23 @@ public class CompanyController {
 				headers, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/sectorId/branchId/productsId", headers = "Accept=application/json", params = {
-			"denomination", "governerate", "ppe" })
+	@RequestMapping(value = "/search", headers = "Accept=application/json", params = {
+			"sectorId", "branchId", "productsId", "denomination",
+			"governerate", "ppe" })
 	@ResponseBody
 	public ResponseEntity<String> getCompaniesBySearchCriteria(
-			@PathVariable("sectorId") Long sectorId,
-			@PathVariable("branchId") Long branchId,
-			@PathVariable("productsId") Long productsId,
+			@RequestParam("sectorId") Long sectorId,
+			@RequestParam("branchId") Long branchId,
+			@RequestParam("productsId") Long productsId,
 			@RequestParam(value = "denomination") String denomination,
 			@RequestParam(value = "governerate") String governerate,
 			@RequestParam(value = "ppe") String ppe) {
-		Logger.getLogger(SectorController.class).log(Level.INFO,
-				"companies by search critiria ");
+		Logger.getLogger(SectorController.class).log(
+				Level.INFO,
+				"companies by search critiria sectorId : " + sectorId
+						+ " branchId : " + branchId + " productsId : "
+						+ productsId + " denomination : " + denomination
+						+ " governerate : " + governerate + " ppe : " + ppe);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json; charset=utf-8");
 
@@ -99,25 +116,32 @@ public class CompanyController {
 			results = Company.findAllCompanys();
 		}
 
-		if (denomination != null && denomination != "") {
-			for (Company company : results) {
-				if (!company.getCompanyName().contains(denomination))
-					results.remove(company);
+		if (denomination != null && denomination != "" && results.size() > 0) {
+			Iterator<Company> itr = results.iterator();
+			while (itr.hasNext()) {
+				Company company = itr.next();
+				if (!company.getDenomination().contains(denomination))
+					itr.remove();
 			}
+
 		}
 
-		if (governerate != null && governerate != "") {
-			for (Company company : results) {
+		if (governerate != null && governerate != "" && results.size() > 0) {
+			Iterator<Company> itr = results.iterator();
+			while (itr.hasNext()) {
+				Company company = itr.next();
 				if (!company.getGovernorate().contains(
 						governerate.replace("_", " ")))
-					results.remove(company);
+					itr.remove();
 			}
 		}
 
-		if (ppe != null && ppe != "") {
-			for (Company company : results) {
+		if (ppe != null && ppe != "" && results.size() > 0) {
+			Iterator<Company> itr = results.iterator();
+			while (itr.hasNext()) {
+				Company company = itr.next();
 				if (!company.getPpe().contains(ppe.replace("_", " ")))
-					results.remove(company);
+					itr.remove();
 			}
 		}
 
