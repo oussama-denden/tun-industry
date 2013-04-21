@@ -73,3 +73,19 @@ finder add --finderName findCompnysByProducts
 finder add --finderName findCompanysByProducts
 // Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2013-04-19 21:03:46
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-19 21:36:01
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-21 11:59:39
+// [failed] entity jpa --class ~.domain.User
+entity jpa --class ~.domain.AppUser
+field string --fieldName userName 
+entity jpa --class ~.domain.AppUser --testAutomatically 
+field string --fieldName email 
+field string --fieldName password 
+field set --type ~.domain.Company --fieldName favorites --cardinality ONE_TO_MANY 
+field string --fieldName userName 
+web mvc all --package ~.web
+json all
+entity jpa --class ~.domain.AppUser --activeRecord 
+exit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-04-21 17:15:08
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-21 17:15:15
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-21 17:17:28

@@ -106,7 +106,7 @@ privileged aspect CompanyDataOnDemand_Roo_DataOnDemand {
     
     public void CompanyDataOnDemand.setResponsible(Company obj, int index) {
         String responsible = "responsible_" + index;
-        obj.setResponsible(responsible);
+        obj.setResponsable(responsible);
     }
     
     public void CompanyDataOnDemand.setUrl(Company obj, int index) {

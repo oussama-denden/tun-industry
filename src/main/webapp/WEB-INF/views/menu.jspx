@@ -19,5 +19,9 @@
             <menu:item id="i_products_new" messageCode="global_menu_new" url="/productses?form" z="tjv6bj7IdIaUqxIFWZ16Tqnjl8A="/>
             <menu:item id="i_products_list" messageCode="global_menu_list" url="/productses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="7rXdeB0KMaFTV4klipEgMqeNLjg="/>
         </menu:category>
+        <menu:category id="c_appuser" z="cRddFjEd+tY/sB3uFILzC627HG4=">
+            <menu:item id="i_appuser_new" messageCode="global_menu_new" url="/appusers?form" z="WiHW92wA1LAtLb8e1wUckLwfr5Y="/>
+            <menu:item id="i_appuser_list" messageCode="global_menu_list" url="/appusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7xJtmb2eX6uz538bncoLyeRzlM="/>
+        </menu:category>
     </menu:menu>
 </div>

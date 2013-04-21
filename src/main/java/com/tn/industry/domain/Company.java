@@ -20,7 +20,7 @@ public class Company {
 
     private String companyName;
 
-    private String responsible;
+    private String responsable;
 
     private String factoryAddress;
 

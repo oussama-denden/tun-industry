@@ -25,12 +25,12 @@ privileged aspect Company_Roo_JavaBean {
         this.companyName = companyName;
     }
     
-    public String Company.getResponsible() {
-        return this.responsible;
+    public String Company.getResponsable() {
+        return this.responsable;
     }
     
-    public void Company.setResponsible(String responsible) {
-        this.responsible = responsible;
+    public void Company.setResponsable(String responsable) {
+        this.responsable = responsable;
     }
     
     public String Company.getFactoryAddress() {
