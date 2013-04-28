@@ -21,6 +21,6 @@ public class Sector {
     @Column(unique = true)
     private String sectorName;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sector")
     private Set<ActivityBranch> sectorBranches = new HashSet<ActivityBranch>();
 }

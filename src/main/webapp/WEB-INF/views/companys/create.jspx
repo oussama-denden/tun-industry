@@ -16,8 +16,8 @@
         <field:datetime dateTimePattern="${company_intoproduction_date_format}" field="intoProduction" id="c_com_tn_industry_domain_Company_intoProduction" z="Fm16m1lY5cBXB+8sMTOcUi2Snwo="/>
         <field:input field="capital" id="c_com_tn_industry_domain_Company_capital" z="DFf85EorCqZb5mjh6+Kh93p7xm8="/>
         <field:input field="workersNum" id="c_com_tn_industry_domain_Company_workersNum" z="V5BCcWE03G1kFHO8pGjjekOuvQE="/>
-        <field:select field="products" id="c_com_tn_industry_domain_Company_products" itemValue="id" items="${productses}" path="/productses" z="F+Tx/tqyJaBdRiClJ94HUWiEOT8="/>
         <field:input field="responsable" id="c_com_tn_industry_domain_Company_responsable" z="z2JUMQHxW+Ofc+0dVsQZ/AYXqLY="/>
+        <field:simple field="productses" id="c_com_tn_industry_domain_Company_productses" messageCode="entity_reference_not_managed" messageCodeAttribute="Products" z="ctth30L+2owE6ZnOgO+3fA1QlS8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_tn_industry_domain_Company" render="${not empty dependencies}" z="Ej7f4WIavBC6jisr2B9eayugXz0="/>
 </div>

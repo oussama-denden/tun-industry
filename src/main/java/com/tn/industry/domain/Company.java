@@ -1,7 +1,14 @@
 package com.tn.industry.domain;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,36 +23,36 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(finders = { "findCompanysByProducts" })
 public class Company {
 
-    private String denomination;
+	private String denomination;
 
-    private String companyName;
+	private String companyName;
 
-    private String responsable;
+	private String responsable;
 
-    private String factoryAddress;
+	private String factoryAddress;
 
-    private String governorate;
+	private String governorate;
 
-    private String phones;
+	private String phones;
 
-    private String faxes;
+	private String faxes;
 
-    private String email;
+	private String email;
 
-    private String url;
+	private String url;
 
-    private String regime;
+	private String regime;
 
-    private String ppe;
+	private String ppe;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date intoProduction;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(style = "M-")
+	private Date intoProduction;
 
-    private double capital;
+	private double capital;
 
-    private long workersNum;
+	private long workersNum;
 
-    @ManyToOne
-    private Products products;
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Products> productses = new HashSet<Products>();
 }

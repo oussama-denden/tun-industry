@@ -6,6 +6,7 @@ package com.tn.industry.domain;
 import com.tn.industry.domain.Company;
 import com.tn.industry.domain.Products;
 import java.util.Date;
+import java.util.Set;
 
 privileged aspect Company_Roo_JavaBean {
     
@@ -121,12 +122,12 @@ privileged aspect Company_Roo_JavaBean {
         this.workersNum = workersNum;
     }
     
-    public Products Company.getProducts() {
-        return this.products;
+    public Set<Products> Company.getProductses() {
+        return this.productses;
     }
     
-    public void Company.setProducts(Products products) {
-        this.products = products;
+    public void Company.setProductses(Set<Products> productses) {
+        this.productses = productses;
     }
     
 }

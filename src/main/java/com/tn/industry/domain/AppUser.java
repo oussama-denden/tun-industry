@@ -24,6 +24,15 @@ public class AppUser {
 	private String email;
 
 	private String password;
+	
+	
+
+	public AppUser(String userName, String email, String password) {
+		super();
+		this.userName = userName;
+		this.email = email;
+		this.password = password;
+	}
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Company> favorites = new HashSet<Company>();
@@ -39,6 +48,19 @@ public class AppUser {
 						AppUser.class);
 		q.setParameter("login", login);
 		q.setParameter("password", password);
+		return q.getSingleResult();
+	}
+	
+	public static AppUser findAppUserByEmail(String email) {
+		if (email == null)
+			throw new IllegalArgumentException(
+					"The email argument is required");
+		EntityManager em = entityManager();
+		TypedQuery<AppUser> q = em
+				.createQuery(
+						"SELECT o FROM AppUser AS o WHERE  o.email = :email",
+						AppUser.class);
+		q.setParameter("email", email);
 		return q.getSingleResult();
 	}
 }

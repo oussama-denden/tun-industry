@@ -16,7 +16,6 @@
         <field:display date="true" dateTimePattern="${company_intoproduction_date_format}" field="intoProduction" id="s_com_tn_industry_domain_Company_intoProduction" object="${company}" z="9skF5JF754mh8tD7MEYmfsKjHMo="/>
         <field:display field="capital" id="s_com_tn_industry_domain_Company_capital" object="${company}" z="VCJv2EfGSwc2nDw9LXkS+NvBIaA="/>
         <field:display field="workersNum" id="s_com_tn_industry_domain_Company_workersNum" object="${company}" z="KbSGAuJbMCfXeabWQC2VVeHjjkw="/>
-        <field:display field="products" id="s_com_tn_industry_domain_Company_products" object="${company}" z="4IwQAQgb2zj5KQY9NAu6NWAfVgI="/>
         <field:display field="responsable" id="s_com_tn_industry_domain_Company_responsable" object="${company}" z="05IXKHcnGj4cpQqGpJAaDd42ubg="/>
     </page:show>
 </div>

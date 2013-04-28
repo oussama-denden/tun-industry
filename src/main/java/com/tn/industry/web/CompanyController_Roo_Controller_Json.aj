@@ -4,7 +4,6 @@
 package com.tn.industry.web;
 
 import com.tn.industry.domain.Company;
-import com.tn.industry.domain.Products;
 import com.tn.industry.web.CompanyController;
 import java.util.List;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect CompanyController_Roo_Controller_Json {
@@ -92,14 +90,6 @@ privileged aspect CompanyController_Roo_Controller_Json {
         }
         company.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
-    }
-    
-    @RequestMapping(params = "find=ByProducts", headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> CompanyController.jsonFindCompanysByProducts(@RequestParam("products") Products products) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        return new ResponseEntity<String>(Company.toJsonArray(Company.findCompanysByProducts(products).getResultList()), headers, HttpStatus.OK);
     }
     
 }

@@ -24,6 +24,10 @@ privileged aspect AppUser_Roo_Jpa_Entity {
     @Column(name = "version")
     private Integer AppUser.version;
     
+    public AppUser.new() {
+        super();
+    }
+
     public Long AppUser.getId() {
         return this.id;
     }

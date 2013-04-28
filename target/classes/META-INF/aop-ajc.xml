@@ -29,7 +29,6 @@
 <aspect name="com.tn.industry.domain.Products_Roo_Finder"/>
 <aspect name="com.tn.industry.domain.Products_Roo_JavaBean"/>
 <aspect name="com.tn.industry.domain.AppUser_Roo_Configurable"/>
-<aspect name="com.tn.industry.domain.Company_Roo_Finder"/>
 <aspect name="com.tn.industry.web.ActivityBranchController_Roo_Controller"/>
 <aspect name="com.tn.industry.domain.Products_Roo_Json"/>
 <aspect name="com.tn.industry.web.CompanyController_Roo_Controller_Json"/>

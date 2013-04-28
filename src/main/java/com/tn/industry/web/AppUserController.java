@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +20,8 @@ import com.tn.industry.domain.Company;
 @RooWebScaffold(path = "appusers", formBackingObject = AppUser.class)
 public class AppUserController {
 
-	@RequestMapping(value = "/authtication", headers = "Accept=application/json", method = RequestMethod.POST)
+	@RequestMapping(value = "/authentication", headers = "Accept=application/json", method = RequestMethod.POST)
+	@ResponseBody
 	public ResponseEntity<String> userAuthentication(
 			@RequestParam("login") String login,
 			@RequestParam("password") String password) {
@@ -36,7 +36,7 @@ public class AppUserController {
 			return new ResponseEntity<String>(user.toJson(), headers,
 					HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<String>(headers, HttpStatus.UNAUTHORIZED);
 		}
 
 	}
@@ -88,4 +88,30 @@ public class AppUserController {
 		return new ResponseEntity<String>(Company.toJsonArray(user
 				.getFavorites()), headers, HttpStatus.OK);
 	}
+
+	@RequestMapping(value = "/createAccount", headers = "Accept=application/json", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<String> createAccount(
+			@RequestParam("login") String login,
+			@RequestParam("email") String email,
+			@RequestParam("password") String password) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json; charset=utf-8");
+		Logger.getLogger(AppUserController.class).log(
+				Level.INFO,
+				"Creating account for user name: " + login + " e-mail : "
+						+ email + " password : " + password);
+		if (login == null || email == null || password == null)
+			return new ResponseEntity<String>(headers, HttpStatus.BAD_REQUEST);
+		AppUser user = null;
+		try {
+			user = AppUser.findAppUserByEmail(email);
+		} catch (Exception e) {
+			user = new AppUser(login, email, password);
+			user.persist();
+		}
+
+		return new ResponseEntity<String>(user.toJson(), headers, HttpStatus.OK);
+	}
+
 }

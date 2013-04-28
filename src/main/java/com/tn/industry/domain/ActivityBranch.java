@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.TypedQuery;
@@ -24,10 +25,11 @@ public class ActivityBranch {
     @Column(unique = true)
     private String activityName;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "activityBranch")
     private Set<Products> activityProducts = new HashSet<Products>();
 
     @ManyToOne
+    @JoinColumn( name = "sectorId")
     private Sector sector;
 
 	

@@ -89,3 +89,10 @@ exit
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-04-21 17:15:08
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-21 17:15:15
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-21 17:17:28
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-04-21 18:00:15
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-23 18:24:31
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-04-27 17:28:45
+focus --class ~.domain.AppUser
+// [failed] finder list 
+// [failed] finder list --class ~.domain.AppUser
+// [failed] finder list 
